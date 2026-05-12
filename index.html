@@ -44,7 +44,7 @@
 
     .hero {
       position: relative;
-      padding: 46px 18px 34px;
+      padding: 46px 18px 38px;
       background:
         radial-gradient(circle at -10% 10%, rgba(245, 164, 0, 0.22), transparent 42%),
         linear-gradient(135deg, #ffffff 0%, #eef4fb 55%, #dfeaf6 100%);
@@ -114,6 +114,7 @@
       margin-top: 20px;
       padding-top: 18px;
       border-top: 1px solid rgba(6, 36, 90, 0.14);
+      max-width: 700px;
     }
 
     .focus-label {
@@ -125,26 +126,18 @@
     }
 
     .focus-line {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 12px;
       color: #06245a;
       font-size: 16px;
       font-weight: 950;
-      line-height: 1.5;
+      line-height: 1.6;
+      word-break: keep-all;
+      overflow-wrap: normal;
     }
 
-    .focus-line span {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .focus-line span:not(:last-child)::after {
-      content: "×";
-      margin-left: 12px;
+    .focus-x {
       color: #f5a400;
       font-weight: 950;
+      padding: 0 8px;
     }
 
     section {
@@ -473,24 +466,9 @@
       line-height: 1.6;
     }
 
-    .desktop-only {
-      display: none;
-    }
-
     @media (min-width: 768px) {
       .hero {
         padding: 72px 28px 54px;
-      }
-
-      .hero-inner {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 42px;
-        align-items: center;
-      }
-
-      .hero-focus {
-        max-width: 540px;
       }
 
       section {
@@ -509,12 +487,19 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .desktop-only {
-        display: block;
-      }
-
       .compact-card {
         padding: 28px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .focus-line {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .focus-x {
+        padding: 0 5px;
       }
     }
 
@@ -529,15 +514,6 @@
 
       .section-title {
         font-size: 25px;
-      }
-
-      .focus-line {
-        font-size: 15px;
-        gap: 6px 10px;
-      }
-
-      .focus-line span:not(:last-child)::after {
-        margin-left: 10px;
       }
 
       .value-grid {
@@ -569,44 +545,13 @@
             處經理的任務，不只是帶領單位完成目標，更是在變動環境中看清方向、凝聚團隊，讓組織持續長出新的成長動能。
           </p>
 
-                 <div class="focus-label">培育主軸</div>
-                       <span>變革管理</span>
-              <span>逆境領導</span>
-              <span>組織再成長</span>
+          <div class="hero-focus">
+            <div class="focus-label">培育主軸</div>
+            <div class="focus-line">
+              變革管理<span class="focus-x">×</span>逆境領導<span class="focus-x">×</span>組織再成長
             </div>
           </div>
         </div>
-
-        <div class="desktop-only">
-          <div class="compact-card">
-            <div class="challenge-list">
-              <div class="challenge-item">
-                <div class="challenge-icon">01</div>
-                <div>
-                  <h3>看懂變化</h3>
-                  <p>從市場、團隊與組織現況，判斷下一階段方向。</p>
-                </div>
-              </div>
-
-              <div class="challenge-item">
-                <div class="challenge-icon">02</div>
-                <div>
-                  <h3>穩住逆境</h3>
-                  <p>在壓力與挑戰中凝聚主管共識，維持行動節奏。</p>
-                </div>
-              </div>
-
-              <div class="challenge-item">
-                <div class="challenge-icon">03</div>
-                <div>
-                  <h3>推動成長</h3>
-                  <p>讓增員、主管培育與組織文化形成可延續的力量。</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </header>
 
